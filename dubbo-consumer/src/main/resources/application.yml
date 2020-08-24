@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: dubbo-consumer
+server:
+  port: 9002
+  servlet:
+    context-path: /api/dubbo/consumer
+
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  consumer:
+    timeout: 3000
+  scan:
+    base-packages: com.example.demo.manage
